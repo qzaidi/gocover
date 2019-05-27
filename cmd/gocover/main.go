@@ -1,14 +1,14 @@
 package main
 
 import (
+	"github.com/qzaidi/gocover/internal/app/routes"
 	"log"
 	"net/http"
-  "github.com/qzaidi/gocover/internal/app/routes"
 )
 
 func main() {
 
-	m := routes.NewModule()
+	m := routes.NewModule("coverage.db")
 
 	http.HandleFunc("/img/cover/", m.GetCoverageHandler)
 	http.HandleFunc("/cover/", m.PutCoverageHandler)

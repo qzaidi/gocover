@@ -14,8 +14,8 @@ type Module struct {
 	store store.Storage
 }
 
-func NewModule() *Module {
-	store := store.NewStorage("coverage.db")
+func NewModule(path string) *Module {
+	store := store.NewStorage(path)
 	return &Module{store: store}
 }
 

@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  gocover:
+    image: qzaidi/gocover
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+      args:
+        repo: github.com/qzaidi/gocover
+        binary_name: gocover
+    restart: always
+    container_name: gocover
+    ports:
+      - 9000:9000
+    environment:
+      env: docker
